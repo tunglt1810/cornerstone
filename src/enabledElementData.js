@@ -11,7 +11,7 @@ import { getEnabledElement } from './enabledElements.js';
 export function getElementData (element, dataType) {
   const ee = getEnabledElement(element);
 
-  if (ee.data.hasOwnProperty(dataType) === false) {
+  if (Boolean(ee.data[dataType]) === false) {
     ee.data[dataType] = {};
   }
 

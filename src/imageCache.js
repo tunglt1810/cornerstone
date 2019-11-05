@@ -88,7 +88,7 @@ export function putImageLoadObject (imageId, imageLoadObject) {
   if (imageLoadObject.promise === undefined) {
     throw new Error('putImageLoadObject: imageLoadObject.promise must not be undefined');
   }
-  if (imageCacheDict.hasOwnProperty(imageId) === true) {
+  if (Boolean(imageCacheDict[imageId]) === true) {
     throw new Error('putImageLoadObject: imageId already in cache');
   }
   if (imageLoadObject.cancelFn && typeof imageLoadObject.cancelFn !== 'function') {

@@ -649,7 +649,7 @@ export function getColormapsList () {
   const keys = Object.keys(colormapsData);
 
   keys.forEach(function (key) {
-    if (colormapsData.hasOwnProperty(key)) {
+    if (colormapsData[key]) {
       const colormap = colormapsData[key];
 
       colormaps.push({

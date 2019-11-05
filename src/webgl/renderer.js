@@ -145,7 +145,7 @@ function getShaderProgram (image) {
   // Choosing the shader based on the image datatype
   // Console.log("Datatype: " + datatype);
 
-  if (shaders.hasOwnProperty(datatype)) {
+  if (shaders[datatype]) {
     return shaders[datatype];
   }
 

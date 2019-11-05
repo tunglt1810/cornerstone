@@ -104,7 +104,12 @@ export default function (element, forceFitToWindow) {
 
   const eventData = { element };
 
-  triggerEvent(element, EVENTS.ELEMENT_RESIZED, eventData);
+  const eventResult = triggerEvent(element, EVENTS.ELEMENT_RESIZED, eventData);
+
+  if (!eventResult) {
+    console.log('user cancel');
+    return;
+  }
 
   if (enabledElement.image === undefined) {
     return;
